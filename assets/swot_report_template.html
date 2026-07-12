@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SWOT 战略分析报告 · 模板</title>
+<!--
+  本文件为 SWOT 报告「精美网页版」的视觉母版。
+  正常流程由 scripts/build_report.py 自动生成（无需手填）；
+  如需人工调整样式或离线填写，按下方 {{占位符}} 替换即可。
+-->
+<style>
+:root{
+  --s:#16a34a; --w:#dc2626; --o:#2563eb; --t:#ea580c;
+  --bg:#f8fafc; --card:#ffffff; --ink:#1e293b; --muted:#64748b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;padding:32px}
+.wrap{max-width:1080px;margin:0 auto}
+header{text-align:center;padding:28px 0 18px;border-bottom:3px solid #e2e8f0;margin-bottom:28px}
+header h1{font-size:28px;letter-spacing:1px}
+header .meta{color:var(--muted);font-size:14px;margin-top:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+.qcard{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 4px 16px rgba(0,0,0,.06);border-top:5px solid #ccc}
+.qcard.S{border-top-color:var(--s)} .qcard.W{border-top-color:var(--w)}
+.qcard.O{border-top-color:var(--o)} .qcard.T{border-top-color:var(--t)}
+.qcard h2{font-size:19px;margin-bottom:12px}
+.qcard ul{list-style:none}
+.qcard li{padding:7px 0;border-bottom:1px dashed #eee;font-size:15px}
+.note{color:var(--t);font-size:12px;background:#fff7ed;padding:1px 6px;border-radius:4px;margin-left:4px}
+.sec{background:var(--card);border-radius:14px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.06);margin-bottom:28px}
+.sec h2{font-size:21px;margin-bottom:16px;border-left:5px solid #334155;padding-left:12px}
+.strat{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.scard{border-radius:10px;padding:16px;background:#f1f5f9}
+.scard h3{font-size:16px;margin-bottom:8px}
+.scard.SO{border-left:4px solid var(--s)} .scard.WO{border-left:4px solid var(--w)}
+.scard.ST{border-left:4px solid var(--o)} .scard.WT{border-left:4px solid var(--t)}
+.scard li{font-size:14px;margin:5px 0 5px 18px}
+.prio{list-style:none}
+.prio li{padding:10px 14px;margin:8px 0;border-radius:8px;background:#f1f5f9;font-size:15px}
+.tag{display:inline-block;font-weight:700;color:#fff;border-radius:6px;padding:2px 9px;margin-right:8px;font-size:13px}
+.tag.P1{background:var(--w)} .tag.P2{background:var(--o)} .tag.P3{background:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+@media(max-width:720px){.grid,.strat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>SWOT 战略分析报告</h1>
+    <!-- {{META}} 替换为：分析对象 / 范围 / 关注 / 战略衔接 -->
+    <div class="meta">{{META}}</div>
+  </header>
+
+  <section class="grid">
+    <div class="qcard S"><h2>优势 Strengths</h2><ul>{{S_ITEMS}}</ul></div>
+    <div class="qcard W"><h2>劣势 Weaknesses</h2><ul>{{W_ITEMS}}</ul></div>
+    <div class="qcard O"><h2>机会 Opportunities</h2><ul>{{O_ITEMS}}</ul></div>
+    <div class="qcard T"><h2>威胁 Threats</h2><ul>{{T_ITEMS}}</ul></div>
+  </section>
+
+  <section class="sec">
+    <h2>战略组合建议</h2>
+    <div class="strat">
+      <div class="scard SO"><h3>SO 战略（进攻型）</h3><ul>{{SO_ITEMS}}</ul></div>
+      <div class="scard WO"><h3>WO 战略（改善型）</h3><ul>{{WO_ITEMS}}</ul></div>
+      <div class="scard ST"><h3>ST 战略（防御型）</h3><ul>{{ST_ITEMS}}</ul></div>
+      <div class="scard WT"><h3>WT 战略（生存型）</h3><ul>{{WT_ITEMS}}</ul></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>重点行动方向</h2>
+    <ul class="prio">{{PRIO_ITEMS}}</ul>
+  </section>
+
+  <footer>本报告由 SWOT战略分析技能生成</footer>
+</div>
+</body>
+</html>
