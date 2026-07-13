@@ -3,6 +3,7 @@ name: swot-analysis
 displayName: SWOT战略分析技能
 description: 通过强制交互引导，与用户充分沟通后完成SWOT战略分析（优势/劣势/机会/威胁四象限 + SO/WO/ST/WT四战略组合），输出结构化MD文档与精美网页版，用于决策与演示
 slug: swot-analysis
+version: 1.0.0
 ---
 
 # SWOT战略分析技能
